@@ -1,0 +1,25 @@
+{
+  "name": "pong-calculator-game",
+  "version": "1.0.0",
+  "description": "Pong vs AI game with calculator and dinosaurs",
+  "main": "dist/server.js",
+  "scripts": {
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:client": "esbuild src/client/ts/main.ts --bundle --outfile=public/js/bundle.js --sourcemap",
+    "build:css": "cp src/client/styles/main.css public/css/main.css",
+    "build": "npm run build:server && npm run build:client && npm run build:css",
+    "watch:client": "esbuild src/client/ts/main.ts --bundle --outfile=public/js/bundle.js --sourcemap --watch",
+    "start": "node dist/server.js",
+    "dev": "npm run build && npm start"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}

@@ -1,0 +1,215 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+/* Game Container */
+.game-container {
+  position: relative;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.score-player {
+  color: #4ecca3;
+}
+
+.score-ai {
+  color: #e94560;
+}
+
+/* Canvas */
+canvas {
+  border: 4px solid #333;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Calculator */
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #16213e;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.calc-display {
+  background: #0f0f23;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  min-width: 180px;
+  min-height: 40px;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 45px);
+  gap: 6px;
+}
+
+.calc-buttons button {
+  width: 45px;
+  height: 45px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.calc-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.calc-buttons button:active {
+  transform: scale(0.95);
+}
+
+.calc-buttons .number {
+  background: #1f4068;
+  color: #fff;
+}
+
+.calc-buttons .operator {
+  background: #e94560;
+  color: #fff;
+}
+
+.calc-buttons .clear {
+  background: #ffc107;
+  color: #000;
+}
+
+.calc-buttons .equals {
+  background: #4ecca3;
+  color: #000;
+  grid-column: span 2;
+  width: 96px;
+}
+
+/* Confetti Button */
+.confetti-btn {
+  width: 100%;
+  height: 35px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confetti-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Message */
+.message {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  color: #444;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Stats Panel */
+.stats-panel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(22, 33, 62, 0.9);
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 180px;
+  color: #fff;
+  font-size: 0.85rem;
+  z-index: 20;
+}
+
+.stats-panel h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #667eea;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.stats-row .wins {
+  color: #4ecca3;
+}
+
+.stats-row .losses {
+  color: #e94560;
+}
+
+/* Recent Matches */
+.recent-matches {
+  margin-top: 10px;
+  border-top: 1px solid #333;
+  padding-top: 8px;
+}
+
+.recent-matches h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.match {
+  font-size: 0.75rem;
+  padding: 3px 0;
+  border-bottom: 1px solid #222;
+}
+
+.match.win {
+  color: #4ecca3;
+}
+
+.match.loss {
+  color: #e94560;
+}

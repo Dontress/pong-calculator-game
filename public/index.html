@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong vs AI + Calculator</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="scoreboard">
+      <span class="score-player" id="playerScore">0</span>
+      <span style="color:#666">-</span>
+      <span class="score-ai" id="aiScore">0</span>
+    </div>
+    <canvas id="pong" width="900" height="600"></canvas>
+
+    <div class="calculator" id="calculator">
+      <div class="calc-display" id="display">0</div>
+      <div class="calc-buttons">
+        <button class="clear" onclick="clearCalc()">C</button>
+        <button class="operator" onclick="appendCalc('/')">/</button>
+        <button class="operator" onclick="appendCalc('*')">*</button>
+        <button class="operator" onclick="deleteCalc()">DEL</button>
+
+        <button class="number" onclick="appendCalc('7')">7</button>
+        <button class="number" onclick="appendCalc('8')">8</button>
+        <button class="number" onclick="appendCalc('9')">9</button>
+        <button class="operator" onclick="appendCalc('-')">-</button>
+
+        <button class="number" onclick="appendCalc('4')">4</button>
+        <button class="number" onclick="appendCalc('5')">5</button>
+        <button class="number" onclick="appendCalc('6')">6</button>
+        <button class="operator" onclick="appendCalc('+')">+</button>
+
+        <button class="number" onclick="appendCalc('1')">1</button>
+        <button class="number" onclick="appendCalc('2')">2</button>
+        <button class="number" onclick="appendCalc('3')">3</button>
+        <button class="number" onclick="appendCalc('.')">.</button>
+
+        <button class="number" onclick="appendCalc('0')">0</button>
+        <button class="equals" onclick="calculate()">=</button>
+      </div>
+      <button class="confetti-btn" onclick="launchConfetti()">Confetti!</button>
+    </div>
+
+    <div class="message" id="message">Press SPACE to start - Calculator still works!</div>
+    <div class="footer">Thanks to Patron Warrior for ideas and services provided</div>
+
+    <div class="stats-panel" id="statsPanel">
+      <h3>Your Stats</h3>
+      <div class="stats-row">
+        <span>Wins:</span>
+        <span class="wins" id="totalWins">0</span>
+      </div>
+      <div class="stats-row">
+        <span>Losses:</span>
+        <span class="losses" id="totalLosses">0</span>
+      </div>
+      <div class="stats-row">
+        <span>Win Rate:</span>
+        <span id="winRate">0%</span>
+      </div>
+      <div class="recent-matches">
+        <h4>Recent Matches</h4>
+        <div id="recentList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/bundle.js"></script>
+</body>
+</html>
