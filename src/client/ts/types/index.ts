@@ -21,6 +21,8 @@ export interface BallState {
   vx: number;
   vy: number;
   color: string;
+  spin: number;      // Angular velocity (affects curve)
+  rotation: number;  // Visual rotation angle
 }
 
 export interface PaddleState {

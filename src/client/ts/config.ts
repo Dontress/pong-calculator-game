@@ -109,5 +109,12 @@ export const PHYSICS = {
   confettiSettleTime: 180, // frames (~3 seconds)
   paddleBounceFactor: 1.05,
   calcBounceFactor: 1.02,
-  dinoKickMultiplier: 1.3
+  dinoKickMultiplier: 1.3,
+  // Ball spin physics
+  spinDecay: 0.995,           // Spin friction per frame
+  magnusStrength: 0.15,       // How much spin curves the ball
+  maxSpin: 0.8,               // Maximum spin value
+  paddleSpinFactor: 0.02,     // Spin applied based on contact offset
+  wallSpinReduction: 0.5,     // Spin reduction on wall bounce
+  rotationVisualSpeed: 8      // Visual rotation multiplier
 } as const;
