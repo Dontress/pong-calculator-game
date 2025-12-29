@@ -49,8 +49,8 @@ export class Game {
   }
 
   private setupEventListeners(): void {
-    // Mouse tracking for player paddle
-    this.canvas.addEventListener('mousemove', (e) => {
+    // Mouse tracking for player paddle - works anywhere on the page
+    document.addEventListener('mousemove', (e) => {
       const rect = this.canvas.getBoundingClientRect();
       const mouseY = e.clientY - rect.top;
       this.player.setY(mouseY - GAME.paddleHeight / 2);
